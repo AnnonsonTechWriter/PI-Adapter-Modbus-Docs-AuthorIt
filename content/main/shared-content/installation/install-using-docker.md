@@ -21,9 +21,15 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
+<<<<<<< HEAD
         exec /PI-Adapter-for-Modbus_1.3.0.131-arm_/OSIsoft.Data.System.Host
     else
         exec /PI-Adapter-for-Modbus_1.3.0.131-arm_/OSIsoft.Data.System.Host --port:$portnum
+=======
+        exec /OpcUa_linux-arm_/OSIsoft.Data.System.Host
+    else
+        exec /OpcUa_linux-arm_/OSIsoft.Data.System.Host --port:$portnum
+>>>>>>> c44237d238503510e997fe78e4db02bfb9594256
     fi
     ```
 
@@ -32,9 +38,15 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
+<<<<<<< HEAD
         exec /PI-Adapter-for-Modbus_1.3.0.131-arm64_/OSIsoft.Data.System.Host
     else
         exec /PI-Adapter-for-Modbus_1.3.0.131-arm64_/OSIsoft.Data.System.Host --port:$portnum
+=======
+        exec /OpcUa_linux-arm64_/OSIsoft.Data.System.Host
+    else
+        exec /OpcUa_linux-arm64_/OSIsoft.Data.System.Host --port:$portnum
+>>>>>>> c44237d238503510e997fe78e4db02bfb9594256
     fi
     ```
 
@@ -43,9 +55,15 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
+<<<<<<< HEAD
         exec /PI-Adapter-for-Modbus_1.3.0.131-x64_/OSIsoft.Data.System.Host
     else
         exec /PI-Adapter-for-Modbus_1.3.0.131-x64_/OSIsoft.Data.System.Host --port:$portnum
+=======
+        exec /OpcUa_linux-x64_/OSIsoft.Data.System.Host
+    else
+        exec /OpcUa_linux-x64_/OSIsoft.Data.System.Host --port:$portnum
+>>>>>>> c44237d238503510e997fe78e4db02bfb9594256
     fi
     ```
 
@@ -66,10 +84,17 @@ To create a Docker container that runs the adapter, follow the instructions belo
     FROM ubuntu:20.04
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
+<<<<<<< HEAD
     COPY modbusdockerstart.sh /
     RUN chmod +x /modbusdockerstart.sh
     ADD ./PI-Adapter-for-Modbus_1.3.0.131-arm_.tar.gz .
     ENTRYPOINT ["/modbusdockerstart.sh"]
+=======
+    COPY {adapter}dockerstart.sh /
+    RUN chmod +x /{adapter}dockerstart.sh
+    ADD ./OpcUa_linux-arm_.tar.gz .
+    ENTRYPOINT ["/{adapter}dockerstart.sh"]
+>>>>>>> c44237d238503510e997fe78e4db02bfb9594256
     ```
 
     **ARM64**
@@ -78,10 +103,17 @@ To create a Docker container that runs the adapter, follow the instructions belo
     FROM ubuntu:20.04
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
+<<<<<<< HEAD
     COPY modbusdockerstart.sh /
     RUN chmod +x /modbusdockerstart.sh
     ADD ./PI-Adapter-for-Modbus_1.3.0.131-arm64_.tar.gz .
     ENTRYPOINT ["/modbusdockerstart.sh"]
+=======
+    COPY {adapter}dockerstart.sh /
+    RUN chmod +x /{adapter}dockerstart.sh
+    ADD ./OpcUa_linux-arm64_.tar.gz .
+    ENTRYPOINT ["/{adapter}dockerstart.sh"]
+>>>>>>> c44237d238503510e997fe78e4db02bfb9594256
     ```
 
     **AMD64 (x64)**
@@ -90,10 +122,17 @@ To create a Docker container that runs the adapter, follow the instructions belo
     FROM ubuntu:20.04
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
+<<<<<<< HEAD
     COPY modbusdockerstart.sh /
     RUN chmod +x /modbusdockerstart.sh
     ADD ./PI-Adapter-for-Modbus_1.3.0.131-x64_.tar.gz .
     ENTRYPOINT ["/modbusdockerstart.sh"]
+=======
+    COPY {adapter}dockerstart.sh /
+    RUN chmod +x /{adapter}dockerstart.sh
+    ADD ./OpcUa_linux-x64_.tar.gz .
+    ENTRYPOINT ["/{adapter}dockerstart.sh"]
+>>>>>>> c44237d238503510e997fe78e4db02bfb9594256
     ```
 
 2. Copy the <code>[!include[installer](../_includes/inline/installer-name.md)]-<var>platform</var>_.tar.gz</code> file to the same directory as the `Dockerfile`.

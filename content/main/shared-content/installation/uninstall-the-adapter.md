@@ -8,7 +8,7 @@ Complete the procedure corresponding to your specific operating system to uninst
 
 ## Windows
 
-1. To delete the PI adapter program files from a Windows device, use the Windows Control Panel uninstall application process.
+1. To delete the AVEVA adapter program files from a Windows device, use the Windows Control Panel uninstall application process.
 
     **Note:** The configuration, data, and log files are not deleted by the uninstall process.
 
@@ -20,10 +20,14 @@ Complete the procedure corresponding to your specific operating system to uninst
 
 ## Linux
 
-1. To delete PI Adapter software from a Linux device, open a terminal window and run the following command:
+1. To delete AVEVA Adapter software from a Linux device, open a terminal window and run the following command:
 
     ```bash
+<<<<<<< HEAD
     sudo apt remove pi.adapter.Modbus 
+=======
+    sudo apt remove aveva.adapter.{adapter-name} 
+>>>>>>> c44237d238503510e997fe78e4db02bfb9594256
     ```
 
 2. Optional: To delete data, configuration, and log files, run the following command:
